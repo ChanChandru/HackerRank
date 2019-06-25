@@ -1,0 +1,23 @@
+s="My madam's mother tongue is malayalam"
+s1=s.replace("'"," ")
+a=s1.split(" ")
+j=-1;c=0;li=[]
+for d in a:
+  j=-1;c=0
+  for i in range(0,len(d)//2):
+    if(d[i]==d[j]):
+      c+=1
+      j-=1
+  if(c==len(d)//2):
+    li.append(d)
+max1=len(li[0]);s=0
+for i in li:
+  if(max1<len(i)):
+    max1=len(i)
+    s=li.index(i)
+print(li[s])
+
+
+
+Output:
+     malayalam
