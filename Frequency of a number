@@ -1,0 +1,10 @@
+s=str(input())
+d={}
+for i in s:
+  if(i not in d):
+    d[i]=1
+  else:
+    d[i]+=1
+for i in d.keys():
+  for j in range(d[i]):
+    print(i,end='')
