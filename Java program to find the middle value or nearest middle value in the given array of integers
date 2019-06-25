@@ -1,0 +1,26 @@
+import math
+l=input();b=[];
+l=l.split(' ')
+for i in l:
+    b.append(int(i))
+max1=max(b);min1=min(b);
+sum1=int(max1+min1)/2
+l=[];s=0;m=[]
+for i in range(0,len(b)):
+    e=0
+    e=math.fabs(float(b[i])-sum1)
+    s=i
+    m.append(s)
+    l.append(e)
+s=l.index(min(l))
+print(b[m[s]])
+    
+    
+    
+ OUtput:
+ Input (stdin)
+    10 8 5 6 25 30 16 21
+Your Output (stdout)
+    16
+Expected Output
+    16
