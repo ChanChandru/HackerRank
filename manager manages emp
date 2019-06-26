@@ -1,15 +1,12 @@
 emp=[10,20,30,40,50]
 man=[20,50,20,50,50]
-manager=set(man);l=[];two=[]
+manager=set(man);two=[]
 manager=list(manager)
 for i in range(0,len(manager)):
   l=[]
   for j in range(0,len(man)):
-    if(man[j]==manager[i]):
-      l.append(j)
-  two.extend(list(l))
-print(two)
+    if(man[j]==manager[i] and man[j]!=emp[j]):
+      l.append(emp[j])
+  two.append(list(l))
 for i in range(0,len(manager)):
-  for j in range(0,len(two)):
-    b=list(two[i])
-    print(manager[i],"---->",b[j])
+    print(manager[i],"---->",two[i])
