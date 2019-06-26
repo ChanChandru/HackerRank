@@ -1,0 +1,6 @@
+n=int(input("Enter Index"))
+fib=[];;nex=1;prime=[];i=0;a=0
+while(i<n+1//2):
+  a+=nex
+  fib.append(a)
+  a=nex;nex+=1
