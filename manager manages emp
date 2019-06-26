@@ -1,0 +1,13 @@
+emp=list(map(int,input().split()))
+man=list(map(int,input().split()))
+manager=[];s=[]
+for i in range(0,len(emp)):
+  l=[]
+  for j in range(0,len(man)):
+    if(i==j):
+      l.append(man[j])
+  if(l not in manager):
+    s.append(i)
+    manager.extend(l)
+for i in range(0,len(s)):
+  print(manager[i],"---->",emp[s[i]])
