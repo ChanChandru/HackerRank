@@ -1,0 +1,21 @@
+n,m=map(int,input().split())
+n1=list(map(int,input().split()))
+m1=list(map(int,input().split()))
+l=[]
+for i in n1:
+    for j in m1:
+        l.append(i+j)
+a=set(l)
+print(len(a))
+****************************************************************************
+Input (stdin)
+
+2 1
+3 2
+3
+Your Output (stdout)
+
+2
+Expected Output
+
+2
