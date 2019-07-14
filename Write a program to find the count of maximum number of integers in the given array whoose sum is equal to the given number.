@@ -20,4 +20,27 @@ for i in range(n):
 for i in count:
     if(len(i)>max):
         max=len(i)
-print(max)
+if(max!=0):print(max)
+else:print(-1)
+
+
+*************************************************************************************
+Testcase 0:
+Input (stdin)
+
+5
+1
+2
+3
+4
+5
+5
+
+Your Output (stdout)
+
+2
+
+Expected Output
+
+2
+
