@@ -1,0 +1,23 @@
+n=int(input())
+l=[];count=[];sum=0;k=0;max=0;
+for i in range(n):
+    b=int(input())
+    l.append(b)
+m=int(input())
+for i in range(n):
+    if(l[i]!=m):
+        sum=l[i];c=[]
+        c.append(l[i]);k=0
+        while(k<n):
+            if(sum+l[k]<=m and i!=k):
+                sum+=l[k]
+                c.append(l[k])
+            if(sum==m):
+                count.append(c)
+                c=[];
+                sum=0
+            k+=1
+for i in count:
+    if(len(i)>max):
+        max=len(i)
+print(max)
