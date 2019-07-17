@@ -1,14 +1,15 @@
 n=int(input())
 l=list(map(int,input().split()))
-c=[];d=[]
-for i in l:
-    if(len(i)==2):
-        d.append(i)
-    else:
-        c.append(i)
-c.sort();d.sort()
-
-
+l.sort();d=[];c=list(set(l))
+for i in c:
+        d.append(l.count(i))
+for i in range(len(d)):
+    a=max(d)
+    for j in range(a):
+        print(c[d.index(a)],end=" ")
+    c.remove(c[d.index(a)])
+    d.remove(a)
+    
 *****************************************************************************************
 Sample Input 0
 6
