@@ -9,7 +9,7 @@ for i in range(len(d)):
         print(c[d.index(a)],end=" ")
     c.remove(c[d.index(a)])
     d.remove(a)
-    
+ 
 *****************************************************************************************
 Sample Input 0
 6
