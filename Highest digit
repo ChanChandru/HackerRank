@@ -1,0 +1,30 @@
+n=5
+l=[3,30,34,5,9]
+l.sort(reverse=True)
+l=list(map(str,l))
+c=[];d=[];j=0;count=0;mint=0;
+for i in l:
+    if(len(i)==2):
+        d.append(i)
+    else:
+        c.append(i)
+f=max(len(c),len(d))
+g=min(len(c),len(d))
+for i in range(g):
+    for j in range(f):
+        if(c[i]>d[j][0]):
+            print(c[i],end="")
+            mint+=1
+            break
+        elif(c[i]<d[j][1]):
+            print(d[j],end="")
+            count+=1
+            break
+c=c[mint::]
+d=d[count::]
+if(len(d)>len(c)):
+    print("".join(d),end='')
+    print("".join(c),end='')
+else:
+    print("".join(c),end='')
+    print("".join(d))
