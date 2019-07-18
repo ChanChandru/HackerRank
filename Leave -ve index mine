@@ -1,0 +1,29 @@
+n=6
+m=[-34,15,-39,9,21,-48]
+l=[];c=[]
+for i in m:
+    if(i>=0):
+        l.append(i)        
+        c.append(m.index(i))
+l.sort();i=0
+for j in c:
+        m[j]=l[i]
+        i+=1
+for i in m:
+        print(i,end=' ')
+*****************************************************************************
+In Geeks
+n=int(input())
+m=list(map(int,input().split()))
+l=[];c=[]
+for i in m:
+    if(i>=0):
+        l.append(i)        
+        c.append(m.index(i))
+l.sort();i=0
+for j in :
+    if(m[j]>=0):
+        m[j]=l[i]
+        i+=1
+for i in m:
+        print(i,end=' ')
