@@ -1,0 +1,17 @@
+l=["john","john","tom","john"]
+a=[];
+for i in l:
+    if(i not in a):
+        a.append(i)
+for i in range(len(a)):
+    n=1;occ=0
+    for j in range(len(l)):
+            if(l[j]==a[i] and l.count(a[i])>1):
+                if(occ!=0):
+                    l[j]+=str(n)
+                    n+=1
+                occ+=1
+print(l)
+
+
+***************************************************************
