@@ -1,0 +1,95 @@
+# using Regular expression to find pattern using findall() & group
+"""
+import re
+regexobj=re.compile(r'(\d\d\d-\d\d\d)-(\d\d\d\d)')
+string = "Find this number 875-433-9356 in the sentence using regex and this 790-400-8432. OK,Bye."
+regex1 = regexobj.findall(string)
+print(regex1[0][1])
+newobj=re.compile(r"Bat(man|mobile|arang|plane)")
+batobj=newobj.findall("I'm vengeance,I'm Batman, I use Batplane and I use Batarang ")
+print(batobj)
+"""
+
+
+
+# ? mark in regular expression      0 or atmost 1 Occurences
+"""
+import re
+refind=re.compile(r'(\+\d\d)?\d\d\d')
+newobj=refind.search("chan's contact is 8754339356")
+print(newobj)
+newobj=refind.search("Another Number is +91+7904008432")
+print(newobj.group(1))
+"""
+
+# + mark in regular expression          1 or more Occurences
+"""
+
+import re
+refind=re.compile(r'(\+\d\d)+\d\d\d');                       
+newobj=refind.search("chan's contact is +8754339356")
+print(newobj.group())
+newobj=refind.search("Another Number is +91+7904558")
+print(newobj.group())
+
+"""
+
+# * mark in regular expression                  0 or more Occurences
+"""
+import re
+refind=re.compile(r'(\+\d\d)*\d\d\d\d\d');                        # ? returns character before with 0 or more occurences
+newobj=refind.search("chan's contact is 8754339356")
+print(newobj.group())
+newobj=refind.search("Another Number is +91+7904008432")
+print(newobj.group())
+"""
+
+# Another regex pattern with findall
+"""
+import re
+repattern=re.compile(r"\d{10}")
+restringout=repattern.findall("Chan's number is 8754339356 and he uses a Mobile phone");
+print(restringout)
+repattern=re.compile(r"\d+ \w+")
+restringout=repattern.findall("12 drummers drumming, 11 pipers piping,10 lords a leaping, 9 ladies dancing, 8 maids a milking, 7 swans a swimming");
+print(restringout)
+vowel2pattern=re.compile(r"^[aeiouAEIOU]")
+vowel2regex=vowel2pattern.findall("Be as it may but i like food coated with chocolate")
+print(vowel2regex)
+"""
+
+# ^ Startswith and $Endswith
+"""
+import re
+restartswith=re.compile(r"^Hello")
+reendswith=re.compile(r"World!$")
+reout=restartswith.search("Hello world!")
+print("StartsWith :",reout.group())
+reout=reendswith.search("Hello World!")
+print("Endswith :",reout.group())
+restartsends=re.compile(r"^H.*!$")
+out=restartsends.findall("Hello, greetings!")
+print(out)
+"""
+
+# . and * Operator          .accepts any character except new lines
+"""
+import re
+redot=re.compile(r"First Name : (.*) Last Name : (.*)")
+out=redot.findall("First Name : Chandru Last Name : Paramasivam")
+print(out)
+redotat=re.compile(r"\w+at")
+out=redotat.findall("I am Eliat I live in a flat and I have a cat.I like oat.")
+print(out)
+"""
+
+#Regular expression sub &verbose method
+import re
+resubobj=re.compile(r"Agent \w+")
+resub=resubobj.sub(r"A *","Agent John drove a sword through Agent Zero's Heart")
+print(resub)
+reverboseobj=re.compile(r'''
+(\d\d\d\d)  #4 digits without paranthesis
+''',re.VERBOSE)
+reverbose=reverboseobj.findall("Number are  87543393556 and the 7904008432")
+print(reverbose)
