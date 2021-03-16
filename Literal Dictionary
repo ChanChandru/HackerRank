@@ -1,0 +1,25 @@
+import json
+import difflib as diff
+
+f=json.load(open("Dictionary.json"))            #Loading opened json file to f
+yes=["yes","y","yep","ok","sure","cool"]        #list of possible yes
+
+def dictionary():
+    Q=input("Do you want to find the meaning of your word : Y/N  ")
+    if(Q.lower() in yes):
+        n=input("Enter a word : \n")
+        closest=diff.get_close_matches(n,f.keys() ,cutoff=0.80)
+        if(n.lower() in f):
+            print(f[n.lower()],end='\n')     #converting everything to lower case to avoid case sensitivity
+        elif(closest[0].lower() in f):
+            print("I don't have that word")
+            print("Did you mean {word}? Y/N ".format(word=closest[0]))
+            if(input()in yes):
+                print(f[closest[0].lower()],end='\n')
+        else:
+            print("Oops! Either I don't know the word or you might have mispelled the word.\nTry Searching Again\n")
+    else:
+        exit()  
+    dictionary()        #Recursion
+
+dictionary()
